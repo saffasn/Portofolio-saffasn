@@ -12,8 +12,8 @@
   --secondaryBackgroundColor: #eee7df;
   --thirdBackgroundColor: #e2d7cb;
 
-  --primaryIconColor: #8b5a32;        /* muted mocha */
-  --primaryIconColorHover: #6e4423;   /* darker coffee */
+  --primaryIconColor: #8b5a32;
+  --primaryIconColorHover: #6e4423;
 
   --sectionPadding: 5rem 0;
   --itemBorderRadius: 1rem;
@@ -398,13 +398,13 @@ nav ul li a:hover::after {
   font-weight: 500;
 }
 
-/* Skills & Education */
-#skills {
+/* Education & Talent Mapping */
+#education {
   padding: var(--sectionPadding);
   background: var(--primaryBackgroundColor);
 }
 
-#skills .section-title {
+.education-section .section-title {
   margin-bottom: 0.5rem;
 }
 
@@ -459,7 +459,7 @@ nav ul li a:hover::after {
   color: #9a8a7a;
 }
 
-/* Skills list */
+/* Talent mapping text + list */
 .skills-right > p {
   font-size: 0.96rem;
 }
@@ -476,10 +476,50 @@ nav ul li a:hover::after {
   padding: 0 1rem;
 }
 
+/* Skills section */
+#skills {
+  padding: var(--sectionPadding);
+  background: var(--secondaryBackgroundColor);
+}
+
+.skills-section .section-title {
+  margin-bottom: 1.5rem;
+}
+
+/* Technical skills matrix */
+.tech-skills {
+  margin-top: 1rem;
+}
+
+.skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 4rem;
+}
+
+.skill-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.skill-stars {
+  font-size: 1.15rem;
+  letter-spacing: 0.15rem;
+}
+
+.star {
+  color: #b9aa9c;
+}
+
+.star.filled {
+  color: var(--primaryIconColor);
+}
+
 /* Contact Section*/
 #contact {
   padding: var(--sectionPadding);
-  background: var(--secondaryBackgroundColor);
+  background: var(--primaryBackgroundColor); /* sama dengan education */
 }
 
 .contact {
@@ -593,4 +633,45 @@ footer {
 .footer-text {
   font-size: 0.85rem;
   color: #9a8a7a;
+}
+
+/* ========= RESPONSIVE PART ========= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  #hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-right {
+    order: -1;
+  }
+
+  .skills-grid,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-matrix {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Small tablets / big phones */
+@media (max-width: 768px) {
+  .skills-matrix {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Phones */
+@media (max-width: 540px) {
+  .skills-matrix {
+    grid-template-columns: 1fr;
+  }
 }

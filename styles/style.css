@@ -398,13 +398,13 @@ nav ul li a:hover::after {
   font-weight: 500;
 }
 
-/* Skills & Education */
-#skills {
+/* Education & Talent Mapping */
+#education {
   padding: var(--sectionPadding);
   background: var(--primaryBackgroundColor);
 }
 
-#skills .section-title {
+.education-section .section-title {
   margin-bottom: 0.5rem;
 }
 
@@ -459,7 +459,7 @@ nav ul li a:hover::after {
   color: #9a8a7a;
 }
 
-/* Skills list */
+/* Talent mapping text + list */
 .skills-right > p {
   font-size: 0.96rem;
 }
@@ -476,10 +476,50 @@ nav ul li a:hover::after {
   padding: 0 1rem;
 }
 
+/* Skills section (separate) */
+#skills {
+  padding: var(--sectionPadding);
+  background: var(--secondaryBackgroundColor);
+}
+
+.skills-section .section-title {
+  margin-bottom: 1.5rem;
+}
+
+/* Technical skills matrix */
+.tech-skills {
+  margin-top: 1rem;
+}
+
+.skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 4rem;
+}
+
+.skill-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.skill-stars {
+  font-size: 1.15rem;
+  letter-spacing: 0.15rem;
+}
+
+.star {
+  color: #b9aa9c;
+}
+
+.star.filled {
+  color: var(--primaryIconColor);
+}
+
 /* Contact Section*/
 #contact {
   padding: var(--sectionPadding);
-  background: var(--secondaryBackgroundColor);
+  background: var(--primaryBackgroundColor); /* Sama dengan education */
 }
 
 .contact {
